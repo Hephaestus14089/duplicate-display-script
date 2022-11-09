@@ -18,10 +18,14 @@ case "$1" in
 		xrandr --addmode "$intern" 1440x900_60.00\
 		&&\
 		xrandr --output "$intern" --mode 1440x900 --output "$extern" --same-as "$intern"\
+		&&\
+		nitrogen --restore &\
 		;;
 	"reconnect")
 		xrandr --output "$extern" --set audio force-dvi --mode 1440x900\
 		&&\
 		xrandr --output "$intern" --mode 1440x900 --output "$extern" --same-as "$intern"\
+		&&\
+		nitrogen --restore &\
 		;;
 esac
